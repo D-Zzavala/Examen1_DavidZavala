@@ -155,7 +155,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="JFTEdad1" min="-2" pref="46" max="-2" attributes="0"/>
-                                                  <Component id="JFTEdad" min="-2" pref="46" max="-2" attributes="0"/>
+                                                  <Component id="JFTEdad2" min="-2" pref="46" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -195,7 +195,7 @@
                                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="JTFNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="JFTEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JFTEdad2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -468,12 +468,32 @@
                               </AuxValues>
                             </Component>
                             <Component class="javax.swing.JFormattedTextField" name="JFTHSalidaP">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                                  <Format format="##" subtype="-1" type="5"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="javax.swing.JFormattedTextField" name="JFTHEntradaP">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                                  <Format format="##" subtype="-1" type="5"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="javax.swing.JFormattedTextField" name="JFTSueldoP">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                  <Format format="##,##0.##" subtype="-1" type="0"/>
+                                </Property>
+                              </Properties>
                             </Component>
                             <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                  <Format format="##" subtype="-1" type="0"/>
+                                </Property>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -537,22 +557,15 @@
                     </Component>
                     <Component class="javax.swing.JFormattedTextField" name="JFTIdentificacion">
                       <Properties>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#########" subtype="-1" type="5"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="JFTEdad">
-                      <Properties>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="###.##" subtype="-1" type="5"/>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="#0" subtype="-1" type="0"/>
                         </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JFormattedTextField" name="JFTPeso">
                       <Properties>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="##" subtype="-1" type="5"/>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="#0" subtype="-1" type="0"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -573,8 +586,15 @@
                     </Component>
                     <Component class="javax.swing.JFormattedTextField" name="JFTEdad1">
                       <Properties>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="###.##" subtype="-1" type="5"/>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="#0.00" subtype="-1" type="0"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JFormattedTextField" name="JFTEdad2">
+                      <Properties>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="#0.00" subtype="-1" type="0"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1235,6 +1255,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton11">
                       <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton11MouseClicked"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
                       </Events>
                     </Component>
@@ -1680,7 +1701,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TBPersonas2" pref="395" max="32767" attributes="0"/>
+                              <Component id="TBPersonas2" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>

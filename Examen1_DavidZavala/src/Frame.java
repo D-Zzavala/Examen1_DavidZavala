@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.JColorChooser;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -65,10 +69,10 @@ public class Frame extends javax.swing.JFrame {
         JRBFemenino = new javax.swing.JRadioButton();
         JTFNombre = new javax.swing.JTextField();
         JFTIdentificacion = new javax.swing.JFormattedTextField();
-        JFTEdad = new javax.swing.JFormattedTextField();
         JFTPeso = new javax.swing.JFormattedTextField();
         JCBEstadoC = new javax.swing.JComboBox<>();
         JFTEdad1 = new javax.swing.JFormattedTextField();
+        JFTEdad2 = new javax.swing.JFormattedTextField();
         PanArticulo = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -268,6 +272,22 @@ public class Frame extends javax.swing.JFrame {
 
         JCBOcupacionP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        try {
+            JFTHSalidaP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            JFTHEntradaP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        JFTSueldoP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##,##0.##"))));
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##"))));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -355,31 +375,15 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        try {
-            JFTIdentificacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        JFTIdentificacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        try {
-            JFTEdad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        try {
-            JFTPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        JFTPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         JCBEstadoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        try {
-            JFTEdad1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        JFTEdad1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+
+        JFTEdad2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
         javax.swing.GroupLayout PanPersonaLayout = new javax.swing.GroupLayout(PanPersona);
         PanPersona.setLayout(PanPersonaLayout);
@@ -419,7 +423,7 @@ public class Frame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(JFTEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JFTEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(JFTEdad2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(PanPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanPersonaLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -448,7 +452,7 @@ public class Frame extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel7)
                             .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JFTEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JFTEdad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(PanPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -720,6 +724,11 @@ public class Frame extends javax.swing.JFrame {
         JBGPuntuación.add(JRBPuntuacion10);
         JRBPuntuacion10.setText("10");
 
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -1133,7 +1142,7 @@ public class Frame extends javax.swing.JFrame {
             PanPersona2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanPersona2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TBPersonas2, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                .addComponent(TBPersonas2)
                 .addContainerGap())
         );
 
@@ -1557,6 +1566,11 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        JColorChooser.showDialog(this, "Color", Color.WHITE);
+    }//GEN-LAST:event_jButton11MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1602,8 +1616,8 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> JCBPersonaModP1;
     private javax.swing.JComboBox<String> JCBPersonaModP2;
     private javax.swing.JComboBox<String> JCBPersonaModP3;
-    private javax.swing.JFormattedTextField JFTEdad;
     private javax.swing.JFormattedTextField JFTEdad1;
+    private javax.swing.JFormattedTextField JFTEdad2;
     private javax.swing.JFormattedTextField JFTHEntradaP;
     private javax.swing.JFormattedTextField JFTHSalidaP;
     private javax.swing.JFormattedTextField JFTIdentificacion;
