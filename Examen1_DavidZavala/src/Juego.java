@@ -14,14 +14,15 @@ import java.awt.Color;
 public class Juego extends Articulo {
 
     private int Edicion;
-    private String Casa, Pais;
+    private String Casa, Pais, Ingreso;
 
     public Juego() {
         super();
     }
 
-    public Juego(int Edicion, String Casa, String Pais, String Titulo, String Categoria, String Editorial, int Tamano, int Puntuacion, Color Colorr) {
+    public Juego(String Ingreso,int Edicion, String Casa, String Pais, String Titulo, String Categoria, String Editorial, int Tamano, int Puntuacion, Color Colorr) {
         super(Titulo, Categoria, Editorial, Tamano, Puntuacion, Colorr);
+        this.Ingreso = Ingreso;
         this.Edicion = Edicion;
         this.Casa = Casa;
         this.Pais = Pais;
