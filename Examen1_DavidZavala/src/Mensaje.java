@@ -10,13 +10,12 @@
  */
 public class Mensaje {
 
-    private String Texto;
-    private Persona Emisor, Receptor;
+    private String Texto, Emisor, Receptor;
 
     public Mensaje() {
     }
 
-    public Mensaje(String Texto, Persona Emisor, Persona Receptor) {
+    public Mensaje(String Texto, String Emisor, String Receptor) {
         this.Texto = Texto;
         this.Emisor = Emisor;
         this.Receptor = Receptor;
@@ -30,19 +29,19 @@ public class Mensaje {
         this.Texto = Texto;
     }
 
-    public Persona getEmisor() {
+    public String getEmisor() {
         return Emisor;
     }
 
-    public void setEmisor(Persona Emisor) {
+    public void setEmisor(String Emisor) {
         this.Emisor = Emisor;
     }
 
-    public Persona getReceptor() {
+    public String getReceptor() {
         return Receptor;
     }
 
-    public void setReceptor(Persona Receptor) {
+    public void setReceptor(String Receptor) {
         this.Receptor = Receptor;
     }
 
